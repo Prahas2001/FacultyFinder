@@ -90,17 +90,19 @@ Open your web browser and navigate to the interactive API documentation to test 
 
 ## Project Structure
 ```
-FacultyFinder/
-├── ingestion.py             # Main entry point: Selenium extraction logic
-├── transformation.py        # Logic: Data cleaning, email sanitization, text normalization
-├── faculty_db.py            # Logic: Database connection, schema creation, & CRUD ops
-├── analysis.py              # Logic: Generates data health checks & statistical summaries
-├── serving.py               # API: FastAPI application to serve the cleaned data
-├── requirements.txt         # Project dependencies
-├── README.md                # Project documentation
-├── faculty.db               # (Output) SQLite database containing structured profiles
-├── final_faculty_data.json  # (Output) JSON artifact for web portability
-├── final_faculty_data.csv   # (Output) CSV artifact for data analysis/Excel
+FacultyFinder(Scraper)/
+│
+├── Scraper/                      # Core Logic Directory
+│   ├── __pycache__/              # Local Python cache (ignored by git)
+│   ├── ingestion.py              # Selenium-native extraction engine
+│   ├── transformation.py         # Data cleaning and normalization
+│   ├── faculty_db.py             # Database schema and CRUD logic
+│   ├── analysis.py               # Data health and statistical reporting
+│   └── serving.py                # FastAPI implementation for data access
+│
+├── .gitignore                    # Security and exclusion rules
+├── README.md                     # Project documentation
+└── requirements.txt              # List of dependencies (Selenium, FastAPI, etc.)
 ```
 
 ## Dataset Statistics & Analysis
